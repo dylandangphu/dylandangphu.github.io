@@ -1,0 +1,8 @@
+<ul class="navList" x-data="navData">
+  <template x-for="option in options" :key="option.id" >
+    <li :class="$store.current.view.id == option.id ? 'navListItem active' : 'navListItem'" @click="$store.current.setView(`${option.id}`);" x-transition>
+      <div x-html="option.icon"></div>
+      <div x-text="option.value"></div>
+    </li>
+  </template>
+</ul>

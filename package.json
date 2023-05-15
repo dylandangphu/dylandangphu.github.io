@@ -1,0 +1,21 @@
+{
+  "name": "c-d.studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "vite": "^4.2.1",
+    "vite-plugin-glsl": "^1.1.2"
+  },
+  "dependencies": {
+    "alpinejs": "^3.12.0",
+    "three": "^0.151.3"
+  }
+}

@@ -1,0 +1,38 @@
+<ul class="expList" x-data="expData">
+  <template x-for="item in items" :key="item.id">
+    <li class="expListItem">
+        <button :class="item.expanded ? 'expAccordian active' : 'expAccordian'"  @click="item.expanded = ! item.expanded">
+          <div class="expTitle" x-text="item.title"></div>
+          <div class="expInfo" x-html="item.info"></div>
+        </button>
+        <div class="expPanel" x-init="$nextTick(() => item.expanded = item.expanded)" x-show="item.expanded" @click="item.expanded = ! item.expanded" x-transition>
+          <ul>
+            <li><h2 x-text="item.description"></h2></li>
+            <hr>
+            <div class="expPanelSummary" x-html="item.summary"></div>
+            <hr>
+            <li><h2 class="text-align-center">Markets</h2></li>
+            <div class="grid-container">
+              <template x-for="market in item.markets" :key="market.id">
+                <div class="gridItemContainer">
+                  <div x-text="market.label"></div>
+                  <div x-html="market.icon"></div>
+                </div>
+              </template>
+            </div>
+            <hr>
+            <li><h2 class="text-align-center">Tech</h2></li>
+            <div class="grid-container">
+                <template x-for="tech in item.tech" :key="tech.id">
+                  <div >
+                    <div x-text="tech.label"></div>
+                    <div x-html="tech.icon"></div>
+                  </div>
+                </template>
+            </div>
+          </ul>
+        </div> 
+    </li>
+    
+  </template>
+</ul>

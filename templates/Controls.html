@@ -1,0 +1,14 @@
+
+<ul class="timeline">
+  <div class="controls" x-data="canvasData">
+      <template x-for="option in options" :key="option.id">
+        <li :class="$store.current.overlay.id >= option.id ? 'selected' : ''" @click="$store.current.stage(`${option.id}`)"><button x-text="option.value"></button></li>
+      </template>
+  </div>
+</ul>
+<div class="backControl" x-show="$store.current.overlay.id == 3">
+  <button @click="$store.current._backHome()"><i class="fa-solid fa-arrow-left"></i>back</button>
+</div>
+
+
+

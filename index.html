@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/bb07d650eb.js"></Script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script defer type="module" src="scripts/AlpineConfig.js"></script>
+    <title>Chi Dang Studios</title>
+  </head>
+  <body>
+    <main >
+        <div class="frame" id="containerFrame">
+          <div class="mainTitle" x-data="titleData" x-init="$nextTick(() => show = !$store.current.isCurrentView(`Space`))" x-show="show" x-transition>
+            <div x-html="title"></div>
+            <hr>
+            <div x-html="subTitle"></div>
+            <div x-html="nav"></div>
+          </div>
+          <div class="contentContainer">
+            <div class="leftContentContainer"></div>
+            <div class="rightContentContainer">
+              <div :id="$store.current.view.value" x-data="{ show: false }" x-init="$nextTick(() => show = $store.current.isCurrentView(`Home`))" x-show="show" x-html="$store.current.view.content" x-transition></div>
+            </div>
+          </div>
+          <div id="SpaceOverlay" x-data="overlayData" x-show="$store.current.isCurrentView(`Space`)" x-html="content" x-transition></div>
+        </div>
+      <canvas class="canvas" id="bg"></canvas>
+      </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
