@@ -1,4 +1,5 @@
 import { renderBackground, renderSpace } from './Graphics'
+import gsap from 'gsap';
 
 export const timeline = gsap.timeline({ defaults: { duration: 1 }})
 

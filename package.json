@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "alpinejs": "^3.12.1",
+    "gsap": "^3.11.5",
     "three": "^0.151.3"
   }
 }
