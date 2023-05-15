@@ -41,15 +41,15 @@ const earth = createPlanet({
     material: {
       uniforms: {
         sunDirection: { value: spotLight.position },
-        dayTexture: { value: textureLoader.load( "../assets/earthmap10k.jpg" ) },
-        nightTexture: { value: textureLoader.load( "../assets/earthlights10k.jpg" ) }
+        dayTexture: { value: textureLoader.load( "/earthmap10k.jpg" ) },
+        nightTexture: { value: textureLoader.load( "/earthlights10k.jpg" ) }
       },
       vertexShader: PLANET_VERTEX_SHADER,
       fragmentShader: PLANET_FRAGMENT_SHADER,
     },
     textures: {
-      bumpMap: '../assets/earthbump10k.jpg',
-      specularMap: '../assets/earthspec10k.jpg',
+      bumpMap: '/earthbump10k.jpg',
+      specularMap: '/earthspec10k.jpg',
     }
   },
   atmosphere: {
@@ -59,8 +59,8 @@ const earth = createPlanet({
       color: 0xffffff,
     },
     textures: {
-      map: '../assets/earthcloudmap.jpg',
-      alphaMap: '../assets/earthcloudmaptrans_.jpg'
+      map: '/earthcloudmap.jpg',
+      alphaMap: '/earthcloudmaptrans_.jpg'
     },
     glow: {
       size: 0.003,
@@ -107,7 +107,7 @@ export const renderSpace = async () => {
 
   textureLoader.crossOrigin = true;
   await textureLoader.load(
-    '../assets/starfield.png',
+    '/starfield.png',
     (texture) => {
       galaxyMaterial.map = texture;
       scene.add(galaxy);
