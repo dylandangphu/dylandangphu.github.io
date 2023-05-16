@@ -478,6 +478,14 @@ canvas {
     width: 35%;
     margin-left: 65%;
   }
+
+  strong {
+    font-size: 1rem;
+    font-weight: 300;
+    @media (min-width: 1200px) {
+      font-size: 1.75rem;
+    }
+  }
 }
 
 
