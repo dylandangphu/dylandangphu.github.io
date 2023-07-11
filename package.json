@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "sass": "^1.62.1",
-    "vite": "^4.2.1",
+    "vite": "^4.2.3",
     "vite-plugin-glsl": "^1.1.2"
   },
   "dependencies": {
